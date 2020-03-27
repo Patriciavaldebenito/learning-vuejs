@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="app">
+    <div id="app" v-bind:style="{ background : '#' +color }">
       <img
         v-on:mouseover="toggleShowPrices"
         v-on:mouseout="toggleShowPrices"
@@ -38,7 +38,7 @@
       <ul v-show="showPrices">
         <!-- cuando el precio sea igual al valor de la propiedad fijada, entonces se aplicara la clase orange-->
         <li 
-        class="uppercase"
+          class="uppercase"
           v-bind:class="{ orange:p.value == price, red: p.value < price, green: p.value > price}"
           v-for="(p,i) in pricesWithDays"
           v-bind:key="p.day"
