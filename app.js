@@ -32,7 +32,13 @@ new Vue({
 
         }
     },
-
+   watch:{
+       //valor nuevo,valor viejo
+       showPrices(newVal, oldVal){
+           console.log(newVal,oldVal )
+       }
+       // 
+   },
   
     methods:{
         toggleShowPrices(){
