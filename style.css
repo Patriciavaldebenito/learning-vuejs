@@ -1,0 +1,28 @@
+.green {
+  color: seagreen;
+}
+
+.red {
+  color: tomato;
+}
+
+.orange {
+  color: orange;
+}
+
+.bold {
+  font-family: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  height: 64px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

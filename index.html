@@ -8,13 +8,14 @@
   </head>
   <body>
     <div id="app">
-      <img 
-      v-on:mouseover='toggleShowPrices' 
-      v-on:mouseout='toggleShowPrices' 
-      v-bind:src='img' v-bind:alt='name' 
-      style="width: 200px;" />
+      <img
+        v-on:mouseover="toggleShowPrices"
+        v-on:mouseout="toggleShowPrices"
+        v-bind:src="img"
+        v-bind:alt="name"
+      />
 
-      <h1>
+      <h1 v-bind:class="changePercent> 0 ? 'green' : 'red' ">
         {{ name }}
         <span v-if="changePercent>0">👍</span>
         <span v-else-if="changePercent < 0">👎</span>
@@ -35,7 +36,13 @@
       </ul> -->
 
       <ul v-show="showPrices">
-        <li v-for="(p,i) in pricesWithDays" v-bind:key="p.day">
+        <!-- cuando el precio sea igual al valor de la propiedad fijada, entonces se aplicara la clase orange-->
+        <li 
+        class="uppercase"
+          v-bind:class="{ orange:p.value == price, red: p.value < price, green: p.value > price}"
+          v-for="(p,i) in pricesWithDays"
+          v-bind:key="p.day"
+        >
           {{ i }} - {{ p.day }} - {{ p.value }}
         </li>
       </ul>
